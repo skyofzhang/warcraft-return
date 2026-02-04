@@ -1,0 +1,42 @@
+{
+  "protocol_version": "1.1",
+  "description": "Claude<->Cursor bidirectional communication protocol via Git .task/ directory",
+  "files": {
+    "current_task.json": {
+      "direction": "Claude->Cursor",
+      "purpose": "Current task definition with precise requirements"
+    },
+    "task_result.json": {
+      "direction": "Cursor->Claude",
+      "purpose": "Task completion report with screenshots"
+    },
+    "ask_claude.json": {
+      "direction": "Cursor->Claude",
+      "purpose": "Questions from Cursor when blocked"
+    },
+    "claude_response.json": {
+      "direction": "Claude->Cursor",
+      "purpose": "Answers from Claude/AI"
+    },
+    "screenshots/": {
+      "direction": "Cursor->Claude",
+      "purpose": "Stage screenshots for verification"
+    },
+    "history/": {
+      "direction": "Both",
+      "purpose": "Archived completed tasks"
+    }
+  },
+  "commit_tags": {
+    "[NODE_COMPLETE]": "Cursor completed a task node, triggers progress sync",
+    "[ASK_CLAUDE]": "Cursor has a question, triggers AI answer flow",
+    "[CLAUDE_RESPONSE]": "Claude/AI wrote back an answer",
+    "[STAGE_DONE]": "A development stage is fully complete"
+  },
+  "rules": [
+    "All files must be valid JSON",
+    "Timestamps use ISO 8601 format",
+    "Screenshots go in screenshots/ with naming: stage{N}_{description}.png",
+    "History files: history/task_{id}_{date}.json"
+  ]
+}
