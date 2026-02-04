@@ -1,0 +1,40 @@
+{
+  "equipments": [
+    {
+      "equipment_id": 1001,
+      "name": "生锈的剑",
+      "type": "weapon",
+      "quality": "common",
+      "icon_path": "UI/Common/UI_Icon_Bag",
+      "attack_bonus": 5,
+      "defense_bonus": 0
+    },
+    {
+      "equipment_id": 1002,
+      "name": "铁剑",
+      "type": "weapon",
+      "quality": "common",
+      "icon_path": "UI/Common/UI_Icon_Bag",
+      "attack_bonus": 10,
+      "defense_bonus": 0
+    },
+    {
+      "equipment_id": 201,
+      "name": "新手弓",
+      "type": "weapon",
+      "quality": "common",
+      "icon_path": "UI/Common/UI_Icon_Bag",
+      "attack_bonus": 5,
+      "defense_bonus": 0
+    },
+    {
+      "equipment_id": 202,
+      "name": "精良弓",
+      "type": "weapon",
+      "quality": "uncommon",
+      "icon_path": "UI/Common/UI_Icon_Bag",
+      "attack_bonus": 15,
+      "defense_bonus": 0
+    }
+  ]
+}

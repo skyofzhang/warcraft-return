@@ -1,0 +1,20 @@
+{
+  "drop_tables": [
+    {
+      "drop_table_id": 1001,
+      "drops": [
+        { "item_type": "gold", "item_id": 0, "count_min": 5, "count_max": 10, "probability": 1.0 },
+        { "item_type": "potion", "item_id": 0, "count_min": 1, "count_max": 1, "probability": 0.25 },
+        { "item_type": "equipment", "item_id": 1001, "count_min": 1, "count_max": 1, "probability": 0.1 }
+      ]
+    },
+    {
+      "drop_table_id": 2001,
+      "drops": [
+        { "item_type": "gold", "item_id": 0, "count_min": 50, "count_max": 100, "probability": 1.0 },
+        { "item_type": "potion", "item_id": 0, "count_min": 1, "count_max": 2, "probability": 0.5 },
+        { "item_type": "equipment", "item_id": 1002, "count_min": 1, "count_max": 1, "probability": 0.5 }
+      ]
+    }
+  ]
+}

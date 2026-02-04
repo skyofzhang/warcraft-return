@@ -1,0 +1,145 @@
+{
+  "levels": [
+    {
+      "level_id": 1,
+      "level_name": "第一关",
+      "scene_name": "Gameplay",
+      "recommended_level": 1,
+      "reward_gold": 40,
+      "reward_exp": 30,
+      "waves": [
+        {
+          "wave_id": 1,
+          "monsters": [
+            { "monster_id": 101, "count": 3, "spawn_points": ["SP_01", "SP_02", "SP_03"] },
+            { "monster_id": 102, "count": 1, "spawn_points": ["SP_04"] }
+          ]
+        },
+        {
+          "wave_id": 2,
+          "monsters": [
+            { "monster_id": 101, "count": 4, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] }
+          ]
+        }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 2,
+      "level_name": "第二关",
+      "scene_name": "Gameplay",
+      "recommended_level": 2,
+      "reward_gold": 55,
+      "reward_exp": 45,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 5, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 3, "spawn_points": ["SP_04", "SP_03", "SP_02"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 3,
+      "level_name": "第三关",
+      "scene_name": "Gameplay",
+      "recommended_level": 3,
+      "reward_gold": 70,
+      "reward_exp": 60,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 6, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] }, { "monster_id": 102, "count": 2, "spawn_points": ["SP_04", "SP_02"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 4, "spawn_points": ["SP_03", "SP_04", "SP_01", "SP_02"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 4,
+      "level_name": "第四关",
+      "scene_name": "Gameplay",
+      "recommended_level": 4,
+      "reward_gold": 85,
+      "reward_exp": 75,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 7, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 5, "spawn_points": ["SP_04", "SP_03", "SP_02", "SP_01"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 5,
+      "level_name": "第五关",
+      "scene_name": "Gameplay",
+      "recommended_level": 5,
+      "reward_gold": 100,
+      "reward_exp": 90,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 8, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] }, { "monster_id": 102, "count": 3, "spawn_points": ["SP_04", "SP_02", "SP_03"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 6, "spawn_points": ["SP_03", "SP_04", "SP_01", "SP_02"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 6,
+      "level_name": "第六关",
+      "scene_name": "Gameplay",
+      "recommended_level": 6,
+      "reward_gold": 120,
+      "reward_exp": 110,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 10, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 8, "spawn_points": ["SP_04", "SP_03", "SP_02", "SP_01"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 7,
+      "level_name": "第七关",
+      "scene_name": "Gameplay",
+      "recommended_level": 7,
+      "reward_gold": 140,
+      "reward_exp": 130,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 11, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] }, { "monster_id": 102, "count": 4, "spawn_points": ["SP_02", "SP_03", "SP_04", "SP_01"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 9, "spawn_points": ["SP_03", "SP_04", "SP_01", "SP_02"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 8,
+      "level_name": "第八关",
+      "scene_name": "Gameplay",
+      "recommended_level": 8,
+      "reward_gold": 160,
+      "reward_exp": 150,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 14, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 11, "spawn_points": ["SP_04", "SP_03", "SP_02", "SP_01"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 9,
+      "level_name": "第九关",
+      "scene_name": "Gameplay",
+      "recommended_level": 9,
+      "reward_gold": 180,
+      "reward_exp": 170,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 10, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] }, { "monster_id": 102, "count": 5, "spawn_points": ["SP_02", "SP_03", "SP_04", "SP_01"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 12, "spawn_points": ["SP_03", "SP_04", "SP_01", "SP_02"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    },
+    {
+      "level_id": 10,
+      "level_name": "第十关",
+      "scene_name": "Gameplay",
+      "recommended_level": 10,
+      "reward_gold": 220,
+      "reward_exp": 200,
+      "waves": [
+        { "wave_id": 1, "monsters": [ { "monster_id": 101, "count": 15, "spawn_points": ["SP_01", "SP_02", "SP_03", "SP_04"] } ] },
+        { "wave_id": 2, "monsters": [ { "monster_id": 102, "count": 14, "spawn_points": ["SP_04", "SP_03", "SP_02", "SP_01"] } ] }
+      ],
+      "boss": { "monster_id": 201, "spawn_point": "SP_BOSS" }
+    }
+  ]
+}

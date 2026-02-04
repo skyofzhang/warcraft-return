@@ -1,0 +1,37 @@
+{
+  "monsters": [
+    {
+      "monster_id": 101,
+      "name": "鱼人",
+      "prefab_path": "",
+      "hp": 100,
+      "attack": 10,
+      "defense": 5,
+      "move_speed": 2.5,
+      "attack_range": 1.5,
+      "drop_table_id": 1001
+    },
+    {
+      "monster_id": 102,
+      "name": "狗头人",
+      "prefab_path": "",
+      "hp": 80,
+      "attack": 8,
+      "defense": 4,
+      "move_speed": 2.0,
+      "attack_range": 1.2,
+      "drop_table_id": 1001
+    },
+    {
+      "monster_id": 201,
+      "name": "兽人酋长",
+      "prefab_path": "",
+      "hp": 500,
+      "attack": 20,
+      "defense": 10,
+      "move_speed": 1.8,
+      "attack_range": 2.0,
+      "drop_table_id": 2001
+    }
+  ]
+}

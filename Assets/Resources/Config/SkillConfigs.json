@@ -1,0 +1,25 @@
+{
+  "skills": [
+    {
+      "skill_id": "SK001",
+      "skill_name": "多重箭",
+      "cooldown": 8.0,
+      "damage_multiplier": 0.8,
+      "arrow_count": 5,
+      "aoe_shape": "cone",
+      "aoe_range": 10.0,
+      "aoe_angle": 60.0
+    },
+    {
+      "skill_id": "SK002",
+      "skill_name": "穿透箭",
+      "cooldown": 5.0,
+      "damage_multiplier": 1.2,
+      "arrow_count": 0,
+      "aoe_shape": "line",
+      "aoe_range": 12.0,
+      "aoe_angle": 0.0
+    }
+  ]
+}
+
