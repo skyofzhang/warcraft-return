@@ -1,94 +1,87 @@
 # Warcraft Return - Cursor AI Rules V1.1.1
-# MT魔兽归来项目 - AI开发协议
-# 更新日期: 2026-02-05
+# MT Project AI Development Protocol
+# Updated: 2026-02-05
 
-## 🎯 项目信息
-- 项目名: MT魔兽归来 (Warcraft Return)
-- 引擎: Unity 2022.3.47f1c1
-- Unity路径: D:\program�2.3.47f1c1ditor\Unity.exe
-- 项目路径: E:\AI_Project\MT
-- 平台: Android ARM64
-- 渲染管线: URP14
+## Project Info
+- Project: MT Warcraft Return
+- Engine: Unity 2022.3.47f1c1
+- Unity Path: D:\program\2022.3.47f1c1\Editor\Unity.exe
+- Project Path: E:\AI_Project\MT
+- Platform: Android ARM64
+- Render Pipeline: URP14
 
-## 📋 开发流程
+## Development Flow
 
-### 1. 启动时必须读取
-- .task/current_task.json - 当前任务
-- .task/PROTOCOL.json - 通信协议
-- 根据任务ID执行开发
+### 1. Read on Startup
+- .task/current_task.json
+- .task/PROTOCOL.json
 
-### 2. 任务执行规范
-- 严格按照current_task.json中的acceptance_criteria执行
-- 每完成一个验收标准，在代码中用注释标记
-- 遇到问题先查看相关代码，不要盲目重写
-- 现有70+文件，修改前先理解依赖关系
+### 2. Task Execution Rules
+- Follow acceptance_criteria strictly
+- Check existing code before modifying (70+ files exist)
+- Understand dependencies before changes
 
-### 3. Git提交规范
-- 完成任务: git commit -m "[NODE_COMPLETE] MT-XXX: 简短描述"
-- 进度更新: git commit -m "[PROGRESS] MT-XXX: 进度描述"
-- 遇到问题: 写入 .task/ask_claude.json 并 git commit -m "[ASK_CLAUDE] 问题简述"
-- 推送: git push origin main
+### 3. Git Commit Tags
+- Task done: git commit -m "[NODE_COMPLETE] MT-XXX: description"
+- Progress: git commit -m "[PROGRESS] MT-XXX: description"
+- Question: write .task/ask_claude.json then git commit -m "[ASK_CLAUDE] question"
+- Always: git push origin main
 
-### 4. 截图验收
-- 完成任务后在Unity中截图
-- 保存到 .task/screenshots/MT-XXX.png
-- 更新 .task/task_result.json
+### 4. Screenshot Verification
+- Save to .task/screenshots/MT-XXX.png
+- Update .task/task_result.json
 
-## 🔧 终端规则（PowerShell）
-- 使用 ; 连接命令（不用 &&）
-- 路径用引号包裹
-- 删除用 Remove-Item
-- 复制用 Copy-Item
+## Terminal Rules (PowerShell)
+- Use ; to chain commands (not and-and)
+- Quote paths with spaces
+- Use Remove-Item for deletion
+- Use Copy-Item for copying
 
-## 🏗️ 自动打包SOP
+## Auto Build SOP
 
-### Step 1: 关闭Unity GUI
+### Step 1: Close Unity GUI
 Get-Process -Name "Unity" -ErrorAction SilentlyContinue | Stop-Process -Force; Start-Sleep -Seconds 5
 
-### Step 2: 命令行打包
-& "D:\program�2.3.47f1c1ditor\Unity.exe" -batchmode -nographics -projectPath "E:\AI_Project\MT" -executeMethod BuildScript.BuildFromCommandLine -quit -logFile "E:\AI_Project\MTuild.log"
+### Step 2: Build Command
+and "D:\program\2022.3.47f1c1\Editor\Unity.exe" -batchmode -nographics -projectPath "E:\AI_Project\MT" -executeMethod BuildScript.BuildFromCommandLine -quit -logFile "E:\AI_Project\MT\build.log"
 
-### Step 3: 等待打包完成
-$process = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
-while ($process) { Start-Sleep -Seconds 10; $process = Get-Process -Name "Unity" -ErrorAction SilentlyContinue }
+### Step 3: Wait for Build
+while (Get-Process -Name "Unity" -ErrorAction SilentlyContinue) { Start-Sleep -Seconds 10 }
 
-### Step 4: 检查结果
-if (Test-Path "E:\AI_Project\MT\Builds\Android\WarcraftReturn.apk") { Write-Host "BUILD SUCCESS" } else { Write-Host "BUILD FAILED"; Get-Content "E:\AI_Project\MTuild.log" -Tail 50 }
+### Step 4: Check Result
+if (Test-Path "E:\AI_Project\MT\Builds\Android\WarcraftReturn.apk") { Write-Host "BUILD SUCCESS" } else { Write-Host "BUILD FAILED"; Get-Content "E:\AI_Project\MT\build.log" -Tail 50 }
 
-### Step 5: 重新打开Unity（如需继续开发）
-Start-Process "D:\program�2.3.47f1c1ditor\Unity.exe" -ArgumentList "-projectPath","E:\AI_Project\MT"
+### Step 5: Reopen Unity
+Start-Process "D:\program\2022.3.47f1c1\Editor\Unity.exe" -ArgumentList "-projectPath","E:\AI_Project\MT"
 
-### 故障排除
-- "Another Unity instance" → Step 1没执行或等待不够，加大Sleep
-- 编译错误 → 查看build.log最后50行
-- 找不到BuildScript → 确认Assets/Editor/BuildScript.cs存在
+### Troubleshooting
+- Another Unity instance: Run Step 1 first, increase Sleep time
+- Compile errors: Check build.log last 50 lines
+- Missing BuildScript: Verify Assets/Editor/BuildScript.cs exists
 
-## 📂 项目架构
+## Project Architecture
 Assets/Scripts/
-├── Core/ (GameManager, BootLoader, EventManager, ConfigManager, SaveSystem...)
-├── Combat/ (CombatSystem, BattleVfxManager...)
-├── Gameplay/ (PlayerController, MonsterController...)
-├── Systems/ (EquipmentManager, InventoryService, LootManager...)
-├── UI/ (UIManager, MainMenuPanel, GameplayPanel, InventoryPanel...)
-├── Data/ (ConfigDataClasses, SaveDataClasses...)
-└── Environment/ (WangZheCanyonMapBuilder...)
+  Core/ - GameManager(22KB), BootLoader, EventManager, ConfigManager(15KB), SaveSystem, PlayerStats
+  Combat/ - CombatSystem, BattleVfxManager, CameraShakeOnDamage, HitFlash
+  Gameplay/ - PlayerController, MonsterController, CharacterVisualFactory
+  Systems/ - EquipmentManager, InventoryService, LootManager, MonsterSpawner, DropPickup
+  UI/ - UIManager, MainMenuPanel, GameplayPanel, InventoryPanel, ShopPanel, SkillsPanel, 10+ panels
+  Data/ - ConfigDataClasses, SaveDataClasses, IStatsProvider, StatType
+  Environment/ - WangZheCanyonMapBuilder, TextureScroll, MapVersionMarker
 
 Assets/Scenes/
-├── Boot.unity (启动场景)
-├── MainMenu.unity (主菜单)
-└── Gameplay.unity (战斗场景)
+  Boot.unity - Boot scene
+  MainMenu.unity - Main menu
+  Gameplay.unity - Battle scene
 
-## ⚠️ 重要注意事项
-- 本项目已有70+个C#文件，不要重复创建已存在的类
-- 修改前先读取相关文件理解现有逻辑
-- GameManager.cs是核心(22KB)，修改需谨慎
-- ConfigManager.cs管理所有配置(15KB)
-- 使用WarcraftReturn.asmdef程序集定义
-- 确保所有新脚本在正确的命名空间下
+## Critical Notes
+- 70+ C# files exist - DO NOT recreate existing classes
+- Read files before modifying to understand existing logic
+- GameManager.cs is core (22KB) - modify carefully
+- ConfigManager.cs handles config (15KB) - modify carefully
+- Uses WarcraftReturn.asmdef assembly definition
 
-## 🎮 质量标准
-- 无编译错误
-- 无运行时NullReferenceException
-- 60fps目标帧率
-- 内存占用<200MB
-- APK大小<100MB
+## Quality Standards
+- Zero compile errors
+- No NullReferenceException at runtime
+- Target 60fps, Memory under 200MB, APK under 100MB
